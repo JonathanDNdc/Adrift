@@ -10,7 +10,7 @@ public class BoatWaterPhysics : MonoBehaviour
     public float waterDrag = 0.99f;
     public float waterAngularDrag = 0.5f;
 
-
+    // Move individual floater
     private void FixedUpdate()
     {
         rb.AddForceAtPosition(Physics.gravity / floaterCount, transform.position, ForceMode.Acceleration);

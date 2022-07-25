@@ -34,7 +34,6 @@ public class WaterController : MonoBehaviour {
             return data;
         }
 
-        // Debug.LogError("GetDataFromMaterial(): Material is NULL!");
         return waveData;
     }
 
@@ -66,6 +65,7 @@ public class WaterController : MonoBehaviour {
         }
     }
 
+    // Get height of vertices
     public float getHeightAtPosition(Vector3 position) 
     {   
         float time = Time.timeSinceLevelLoad;
@@ -79,6 +79,7 @@ public class WaterController : MonoBehaviour {
         return currentPosition.y;
     }
 
+    // Add all data together
     public Vector3 GetWaveAddition(Vector3 position, float timeSinceStart) 
     {
         Vector3 result = new Vector3();

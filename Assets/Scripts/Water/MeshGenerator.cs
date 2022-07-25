@@ -6,9 +6,11 @@ using UnityEngine;
 public class MeshGenerator : MonoBehaviour
 {
 
+    // Public properties
     public int Size = 20;
     public float scale = 1.0f;
 
+    // Mesh
     private Mesh mesh;
     private Vector3[] vertices;
     private int[] triangles;
@@ -17,6 +19,7 @@ public class MeshGenerator : MonoBehaviour
 
     void Start()
     {
+        // Mesh setup
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         verticiesLength = (Size + 1) * (Size + 1);
@@ -31,6 +34,7 @@ public class MeshGenerator : MonoBehaviour
         UpdateMesh();
     }
 
+    // Update height of vertices
     void UpdatePlaneVerticies()
     {
         vertices = new Vector3[verticiesLength];
@@ -39,6 +43,7 @@ public class MeshGenerator : MonoBehaviour
         float halfSizeX = (scale * Size) / 2;
         float halfSizeZ = (scale * Size) / 2;
 
+        // Generate vertices
         int i = 0;
         for (int z = 0; z <= Size; z++)
         {
@@ -61,6 +66,7 @@ public class MeshGenerator : MonoBehaviour
         int vert = 0;
         int tris = 0;
 
+        // Generate triangles
         for (int z = 0; z < Size; z++)
         {
             for (int x = 0; x < Size; x++)

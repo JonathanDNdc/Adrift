@@ -12,6 +12,7 @@ public class FloorEffect : MonoBehaviour
         rend = GetComponent<Renderer>();
     }
 
+    // Better looking waves and floor movement effect
     void Update()
     {
         float mainTexOffset = Time.time * mainTexSpeed;
